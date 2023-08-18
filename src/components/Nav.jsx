@@ -28,7 +28,7 @@ const Nav = () => {
 
                     <img src={EzgifSVG} />
                 </div>
-                <div class="flex space-x-4 my-auto">
+                <div class="hidden md:flex space-x-4 my-auto">
                     <div className="text-white text-sm font-medium uppercase">НҮҮР</div>
                     <div className="text-white text-sm font-medium uppercase">ТУХАЙ</div>
                     <div className="text-white text-sm font-medium uppercase">ЦАГ АВАХ</div>

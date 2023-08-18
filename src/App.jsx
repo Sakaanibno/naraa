@@ -22,6 +22,7 @@ import Breadcrumb from './components/Breadcrumb'
 import Profilecard1 from './components/Profilecard1'
 import Ontslogcard1 from './components/ontslogcard1'
 import fast from './assets/fast.svg'
+import { Outlet } from 'react-router-dom'
 
 function App() {
 
@@ -88,7 +89,7 @@ function App() {
       image: fast
     },
   ]
-  
+
 
 
 
@@ -97,65 +98,8 @@ function App() {
   return (
     <>
       <Nav />
-      <Breadcrumb
-        data={breadcrumb}
-      />
-      <div className="flex">
-        <div className="w-[50vw] my-auto  mx-[135px] ">
-          <h3 className="text-navbar-backgruond text-5xl">Бидний тухай </h3>
-          <p className="text-black text-base mt-10">Launced in 2015, Exclusive is South Asia’s premier online shopping makterplace with an active presense in Bangladesh. Supported by wide range of tailored marketing, data and service solutions, Exclusive has 10,500 sallers and 300 brands and serves 3 millioons customers across the region. </p>
-          <p className="text-black text-base mt-10">Exclusive has more than 1 Million products to offer, growing at a very fast. Exclusive offers a diverse assotment in categories ranging  from consumer. </p>
-        </div>
-        <div className="flex justify-end">
-          <img src={SideSVG} />
-        </div>
-      </div>
-      <div className="pt-28">
-        <div dir="ltr">
-          <div className="ps-20">
-
-            <div className='md:flex grid grid-cols-4 space-x-4 my-auto  justify-around items-center mx-auto'>
-              {card1Data.map((data, index) => (
-                <Card1
-                  key={index}
-                  image={data.image}
-                  title={data.title}
-                  desc={data.desc}
-                />
-              ))}
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-      <div className="flex justify-evenly pt-28">
-        {profilecard1.map((data, index) => (
-          <Profilecard1
-            key={index}
-            title={data.title}
-            image={data.image}
-            desc={data.desc}
-          />
-        ))}
-      </div>
-      <div className="flex justify-evenly pt-28">
-        <img src={Scroll} />
-      </div>
-      <div className="flex justify-evenly pt-28">
-      {ontslogcard1.map((data, index) => (
-        <Ontslogcard1
-        key={index}
-        title={data.title}
-        image={data.image}
-        desc={data.desc}
-        />
-      ))}
-      </div>
-
-      <div className='md:flex space-x-8 bg-navbar-backgruond mt-10 pt-5 py-2 justify-evenly'>
+      <Outlet />
+      <div className='md:flex space-x-8 bg-navbar-backgruond  py-2 justify-evenly'>
         <div>
           <div className='font-bold text 2xl cursor-pointer flex items-center font-[Poppins] text-gray-800 mix-blend-lighten'>
             <img src={EzgifSVG} />
